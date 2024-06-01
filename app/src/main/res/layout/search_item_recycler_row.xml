@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_corners"
+    android:layout_margin="10dp"
+    android:elevation="2dp">
+
+    <include layout="@layout/item_img_view"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="itemName"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:id="@+id/itemNameView"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="itemDesc"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/itemDescView"/>
+
+    </LinearLayout>
+
+</LinearLayout>

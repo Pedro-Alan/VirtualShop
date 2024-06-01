@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984301897635",
+    "project_id": "virtual-shop-4a66c",
+    "storage_bucket": "virtual-shop-4a66c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984301897635:android:8e2b485891126433c07c16",
+        "android_client_info": {
+          "package_name": "com.example.virtualshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3-uQinLy5ZiC9MTIPWIggeWQtNcVmQSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

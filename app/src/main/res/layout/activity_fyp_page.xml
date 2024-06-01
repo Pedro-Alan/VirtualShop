@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/dark_screen"
+    android:gravity="center"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FYP_Page">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:hint="E-mail"
+            android:textColorHint="#868686"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/fypEmailField"/>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Change Password"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="36dp"
+            android:id="@+id/fypChangePasswordBtn"
+            android:onClick="changePassword"/>
+
+        <Button
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Back"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="100dp"
+            android:id="@+id/fypToLoginScreenBtn"
+            android:onClick="toLoginPage"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
