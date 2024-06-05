@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.virtualshop.R;
 
-public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter {
+public class SearchItemRecyclerAdapter {
     class ItemModelViewHolder extends RecyclerView.ViewHolder {
         TextView itemNameView, itemDescView;
         ImageView itemImgView;
