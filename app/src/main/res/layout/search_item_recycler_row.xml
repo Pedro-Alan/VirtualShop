@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:background="@drawable/rounded_corners"
     android:layout_margin="10dp"
-    android:elevation="2dp">
+    android:elevation="2dp"
+    android:orientation="vertical">
 
     <include layout="@layout/item_img_view"
         android:layout_width="250dp"
@@ -23,17 +24,18 @@
             android:layout_height="wrap_content"
             android:text="itemName"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:id="@+id/itemNameView"/>
+            android:textSize="20sp"
+            android:id="@+id/itemNameView"
+            android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="itemDesc"
+            android:text="itemPrice"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginTop="50dp"
-            android:id="@+id/itemDescView"/>
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/itemPriceView"/>
 
     </LinearLayout>
 

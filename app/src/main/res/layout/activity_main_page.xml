@@ -6,23 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dark_screen"
-    android:gravity="center"
-    android:padding="16dp"
     tools:context=".MainPage">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foregroundGravity="center">
-
-        <LinearLayout
-            android:layout_width="350dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:background="@color/white"
+            android:padding="10dp"
+            android:id="@+id/mainToolbar">
 
-        </LinearLayout>
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/profile_pic"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:id="@+id/pfpImgBtn"/>
 
-    </ScrollView>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainToolbar"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:id="@+id/itemsRecyclerView">
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
