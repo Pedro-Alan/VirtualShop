@@ -1,8 +1,6 @@
 package com.example.virtualshop;
 
-import android.app.DownloadManager;
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -18,36 +16,40 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.Query;
 
 public class MainPage extends AppCompatActivity {
-    RecyclerView itemsRecyclerView;
-    SearchItemRecyclerAdapter adapter;
+    private RecyclerView itemsRecyclerView;
+    private SearchItemRecyclerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_page);
+
+        itemsRecyclerView = findViewById(R.id.itemsRecyclerView);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            showAllItems();
             return insets;
         });
+
+        setupRecyclerView();
     }
 
-    void showAllItems(){
+    private void setupRecyclerView() {
         Query query = FirebaseUtil.allItemsCollectionReference();
         FirestoreRecyclerOptions<ItemModel> options = new FirestoreRecyclerOptions.Builder<ItemModel>()
                 .setQuery(query, ItemModel.class).build();
 
-        adapter = new SearchItemRecyclerAdapter(options, getApplicationContext());
+        adapter = new SearchItemRecyclerAdapter(options, this);
         itemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         itemsRecyclerView.setAdapter(adapter);
-        adapter.startListening();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(adapter != null){
+        if (adapter != null) {
             adapter.startListening();
         }
     }
@@ -55,7 +57,7 @@ public class MainPage extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if(adapter != null){
+        if (adapter != null) {
             adapter.stopListening();
         }
     }
@@ -63,7 +65,7 @@ public class MainPage extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(adapter != null){
+        if (adapter != null) {
             adapter.startListening();
         }
     }

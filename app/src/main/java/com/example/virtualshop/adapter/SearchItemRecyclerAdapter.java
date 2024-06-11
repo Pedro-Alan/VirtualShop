@@ -15,7 +15,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter<ItemModel, SearchItemRecyclerAdapter.ItemModelViewHolder> {
-    Context context;
+    private final Context context;
 
     public SearchItemRecyclerAdapter(@NonNull FirestoreRecyclerOptions<ItemModel> options, Context context) {
         super(options);
@@ -26,7 +26,8 @@ public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter<ItemMode
     protected void onBindViewHolder(@NonNull ItemModelViewHolder holder, int position, @NonNull ItemModel model) {
         holder.itemNameView.setText(model.getItemName());
         holder.itemPriceView.setText(model.getItemPrice());
-
+        // Set the item image if you have one
+        // holder.itemImgView.setImage...
     }
 
     @NonNull
@@ -36,10 +37,10 @@ public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter<ItemMode
         return new ItemModelViewHolder(v);
     }
 
-
     class ItemModelViewHolder extends RecyclerView.ViewHolder {
         TextView itemNameView, itemPriceView;
         ImageView itemImgView;
+
         public ItemModelViewHolder(@NonNull View itemView) {
             super(itemView);
             itemNameView = itemView.findViewById(R.id.itemNameView);

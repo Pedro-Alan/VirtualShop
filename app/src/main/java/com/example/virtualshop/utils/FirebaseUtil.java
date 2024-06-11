@@ -5,16 +5,11 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FirebaseUtil {
-    public static boolean isLogged(){
-        if(FirebaseAuth.getInstance().getUid() != null){
-            return true;
-        }
-        else{
-            return false;
-        }
+    public static boolean isLogged() {
+        return FirebaseAuth.getInstance().getUid() != null;
     }
 
-    public static CollectionReference allItemsCollectionReference(){
+    public static CollectionReference allItemsCollectionReference() {
         return FirebaseFirestore.getInstance().collection("items");
     }
 }
