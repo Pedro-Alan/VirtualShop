@@ -5,10 +5,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FirebaseUtil {
-    public static boolean isLogged() {
-        return FirebaseAuth.getInstance().getUid() != null;
-    }
 
+    //Checa o banco de itens
     public static CollectionReference allItemsCollectionReference() {
         return FirebaseFirestore.getInstance().collection("items");
     }

@@ -26,6 +26,8 @@ public class RegistrationPage extends AppCompatActivity {
     EditText regNameField, regEmailField, regPhoneField, regPasswordField, confirmPasswordField;
     FirebaseAuth fbAuth;
 
+
+    //Inicializa a tela e seus componentes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,7 @@ public class RegistrationPage extends AppCompatActivity {
         });
     }
 
+    //Inicializa os atributos necessários
     public void initializeAttributes(){
         regNameField = findViewById(R.id.regNameField);
         regEmailField = findViewById(R.id.regEmailField);
@@ -50,6 +53,7 @@ public class RegistrationPage extends AppCompatActivity {
         confirmPasswordField = findViewById(R.id.confirmPasswordField);
     }
 
+    //Checa se os dados foram passados corretamente e os armazena no banco de dados
     public void registerUser(View v){
         String regName = regNameField.getText().toString();
         String regEmail = regEmailField.getText().toString();
@@ -115,6 +119,7 @@ public class RegistrationPage extends AppCompatActivity {
         }
     }
 
+    //Vai para a página de login
     public void toLoginPage(View v){
         Intent in = new Intent(RegistrationPage.this, LoginPage.class);
         startActivity(in);

@@ -22,6 +22,7 @@ public class FYP_Page extends AppCompatActivity {
     EditText fypEmailField;
     FirebaseAuth fbAuth;
 
+    //Inicializa a tela e seus componentes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +39,12 @@ public class FYP_Page extends AppCompatActivity {
         });
     }
 
+    //Inicializa os atributos necessários
     public void initializeAttributes(){
         fypEmailField = findViewById(R.id.fypEmailField);
     }
 
+    //Verifica se o banco tem em si o email recebido, e caso tenha, o envia uma solicitação de mudança de senha
     public void changePassword(View v){
         String fypEmail = fypEmailField.getText().toString();
 
@@ -65,6 +68,7 @@ public class FYP_Page extends AppCompatActivity {
         }
     }
 
+    //Retorna para a tela de login
     public void toLoginPage(View v){
         Intent in = new Intent(FYP_Page.this, LoginPage.class);
         startActivity(in);

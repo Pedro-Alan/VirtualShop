@@ -26,6 +26,7 @@ public class LoginPage extends AppCompatActivity {
     EditText emailField, passwordField;
     private FirebaseAuth fbAuth;
 
+    //Inicializa a tela e seus componentes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class LoginPage extends AppCompatActivity {
             return insets;
         });
 
+        //Vai para a tela de recuperar a senha
         TextView fypView = findViewById(R.id.fypView);
         fypView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,11 +53,13 @@ public class LoginPage extends AppCompatActivity {
         });
     }
 
+    //Inicializa os atributos necessários
     public void initializeAttributes(){
         emailField = (EditText) findViewById(R.id.emailField);
         passwordField = (EditText) findViewById(R.id.passwordField);
     }
 
+    //Checa os campos de texto e os passa para a função de logIn
     public void checkCredentials(View v){
         String email = emailField.getText().toString();
         String password = passwordField.getText().toString();
@@ -77,6 +81,7 @@ public class LoginPage extends AppCompatActivity {
         }
     }
 
+    //Confere se as informações recebidas se encontram no banco de dados e realiza diferentes ações com base no retorno
     private void logIn(User user){
         fbAuth.signInWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -108,11 +113,13 @@ public class LoginPage extends AppCompatActivity {
         });
     }
 
+    //Vai para a página de produtos
     public void toMainPage(){
         Intent in = new Intent(LoginPage.this, MainPage.class);
         startActivity(in);
     }
 
+    //Vai para a página de cadastro
     public void toRegScreen(View v){
         Intent in = new Intent(LoginPage.this, RegistrationPage.class);
         startActivity(in);

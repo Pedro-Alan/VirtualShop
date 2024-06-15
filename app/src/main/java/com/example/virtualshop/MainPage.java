@@ -19,6 +19,7 @@ public class MainPage extends AppCompatActivity {
     private RecyclerView itemsRecyclerView;
     private SearchItemRecyclerAdapter adapter;
 
+    //Inicializa a tela
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class MainPage extends AppCompatActivity {
         setupRecyclerView();
     }
 
+    //Configura a recyclerView, perimitindo a visualização dos produtos
     private void setupRecyclerView() {
         Query query = FirebaseUtil.allItemsCollectionReference();
         FirestoreRecyclerOptions<ItemModel> options = new FirestoreRecyclerOptions.Builder<ItemModel>()
@@ -46,6 +48,7 @@ public class MainPage extends AppCompatActivity {
         itemsRecyclerView.setAdapter(adapter);
     }
 
+    //Permite a apresentação dos produtos
     @Override
     protected void onStart() {
         super.onStart();
@@ -54,6 +57,7 @@ public class MainPage extends AppCompatActivity {
         }
     }
 
+    //Permite a apresentação dos produtos
     @Override
     protected void onStop() {
         super.onStop();
@@ -62,6 +66,7 @@ public class MainPage extends AppCompatActivity {
         }
     }
 
+    //Permite a apresentação dos produtos
     @Override
     protected void onResume() {
         super.onResume();

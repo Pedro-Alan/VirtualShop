@@ -17,11 +17,13 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter<ItemModel, SearchItemRecyclerAdapter.ItemModelViewHolder> {
     private final Context context;
 
+    //Inicializa a variável context e a options
     public SearchItemRecyclerAdapter(@NonNull FirestoreRecyclerOptions<ItemModel> options, Context context) {
         super(options);
         this.context = context;
     }
 
+    //Faz a conexão o xml padrão de produtos e as variáveis nessa classe contidas
     @Override
     protected void onBindViewHolder(@NonNull ItemModelViewHolder holder, int position, @NonNull ItemModel model) {
         holder.itemNameView.setText(model.getItemName());
@@ -30,6 +32,7 @@ public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter<ItemMode
         // holder.itemImgView.setImage...
     }
 
+    //Permite a visualização
     @NonNull
     @Override
     public ItemModelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,6 +40,7 @@ public class SearchItemRecyclerAdapter extends FirestoreRecyclerAdapter<ItemMode
         return new ItemModelViewHolder(v);
     }
 
+    //Instancia as variáveis
     class ItemModelViewHolder extends RecyclerView.ViewHolder {
         TextView itemNameView, itemPriceView;
         ImageView itemImgView;
